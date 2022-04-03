@@ -31,7 +31,7 @@ export default [
                 title:"CLAPPORTFOLIO",
                 kind:["HYBRID APP","RESPONSIVE"],
                 percent:100,
-                period:"2022.03",
+                period:"2022.03 ~ 20202.04",
                 use:["HTML5 ","CSS3 ","JAVASCRIPT ","VUE "]
             },
             {
