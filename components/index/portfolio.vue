@@ -2,22 +2,23 @@
     <article class="portfolio">
         <h2 class="hidden">포트폴리오 목록</h2>
         <ul class="portfolio_list">
-            <li v-for="i in data[login].portfolio" :key="i">
+            <li v-for="(a,i) in data[login].portfolio" :key="a">
                 <div class="img_box">
-                    <img :src="i.portfolioImg" alt="">
+                    <img :src="a.portfolioImg" alt="">
                 </div>
                 <dl class="info_box">
-                    <dt>{{i.title}}</dt>
+                    <dt>{{a.title}}</dt>
                     <dd>
-                        <span v-for="a in i.kind" :key="a">{{a}} &nbsp;</span>
+                        <span v-for="j in a.kind" :key="j">{{j}} &nbsp;</span>
                     </dd>
-                    <dd>기여도 : {{i.percent}}%</dd>
-                    <dd>기간 : {{i.period}}</dd>
+                    <dd>기여도 : {{a.percent}}%</dd>
+                    <dd>기간 : {{a.period}}</dd>
                     <dd>
-                        <span v-for="a in i.use" :key="a">#{{a}} &nbsp;</span>
+                        <span v-for="k in a.use" :key="k">#{{k}} &nbsp;</span>
                     </dd>
                     <dd>
-                        <a class="btn_link" target="_blink" :href="i.link">SITE VIEW</a>
+                        <a v-if="login == 0 && i == 0 " href="" target="_blink" class="btn_link">CODE VIEW</a>
+                        <a v-else class="btn_link" target="_blink" :href="i.link">SITE VIEW</a>
                     </dd>
                 </dl>
                 <button v-if="login != 0" @click="portfolioDelete" class="btn_delete">
